@@ -5,10 +5,7 @@ import java.lang.reflect.Field;
 import net.darkhax.tips.client.shader.WrappedFrameBuffer;
 import net.minecraft.client.LoadingScreenRenderer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiDisconnected;
-import net.minecraft.client.gui.GuiDownloadTerrain;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiScreenWorking;
+import net.minecraft.client.gui.*;
 import net.minecraft.client.multiplayer.GuiConnecting;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraftforge.client.event.GuiScreenEvent.DrawScreenEvent;
@@ -63,7 +60,7 @@ public class TipHandler {
         
         final GuiScreen gui = event.getGui();
         
-        if (gui instanceof GuiScreenWorking || gui instanceof GuiDownloadTerrain || gui instanceof GuiConnecting || gui instanceof GuiDisconnected) {
+        if (gui instanceof GuiScreenWorking || gui instanceof GuiDownloadTerrain || gui instanceof GuiConnecting || gui instanceof GuiDisconnected || gui instanceof GuiIngameMenu || gui instanceof GuiOptions) {
             
             TipsAPI.renderTip();
         }
